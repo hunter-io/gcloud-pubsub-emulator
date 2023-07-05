@@ -2,6 +2,5 @@
 
 set -e
 
-docker build -t gcloud-pubsub-emulator:latest .
-docker push docker.io/marcelcorso/gcloud-pubsub-emulator:latest
-docker push docker.io/messagebird/gcloud-pubsub-emulator:latest
+docker build -t ghcr.io/hunter-io/gcloud-pubsub-emulator:latest .
+docker push ghcr.io/hunter-io/gcloud-pubsub-emulator:latest
