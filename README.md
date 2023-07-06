@@ -1,20 +1,20 @@
 gcloud-pubsub-emulator
 ----------------------
-This repository contains the Docker configuration for Google's PubSub emulator. It's mainly the dockerization and documentation of https://github.com/prep/pubsubc 
+This repository contains the Docker configuration for Google's PubSub emulator. It's mainly the dockerization and documentation of https://github.com/prep/pubsubc
 
 Installation
 ------------
 A pre-built Docker container is available for Docker Hub:
 
 ```
-docker run --rm -ti -p 8681:8681 messagebird/gcloud-pubsub-emulator:latest
+docker run --rm -ti -p 8681:8681 ghcr.io/hunter-io/gcloud-pubsub-emulator:latest
 ```
 
 Or, you can build this repository yourself:
 
 ```
 docker build -t gcloud-pubsub-emulator:latest .
-docker run --rm -ti -p 8681:8681 gcloud-pubsub-emulator:latest
+docker run --rm -ti -p 8681:8681 gcloud-pubsub-emulator
 ```
 
 Usage
@@ -50,7 +50,7 @@ PUBSUB_PROJECT1=company-dev,invoices:invoice-calculator,chats:slack-out:irc-out,
 So the full command would look like:
 
 ```
-docker run --rm -ti -p 8681:8681 -e PUBSUB_PROJECT1=company-dev,invoices:invoice-calculator,chats:slack-out:irc-out,notifications messagebird/gcloud-pubsub-emulator:latest
+docker run --rm -ti -p 8681:8681 -e PUBSUB_PROJECT1=company-dev,invoices:invoice-calculator,chats:slack-out:irc-out,notifications ghcr.io/hunter-io/gcloud-pubsub-emulator:latest
 ```
 
 If you want to define more projects, you'd simply add a `PUBSUB_PROJECT2`, `PUBSUB_PROJECT3`, etc.
