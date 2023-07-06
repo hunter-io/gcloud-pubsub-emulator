@@ -15,7 +15,8 @@ COPY --from=builder /usr/bin/wait-for /usr/bin
 COPY --from=builder /go/bin/pubsubc   /usr/bin
 COPY                run.sh            /run.sh
 
-RUN apk --update add openjdk8-jre netcat-openbsd && gcloud components install beta pubsub-emulator
+RUN apk --update add openjdk8-jre netcat-openbsd
+RUN gcloud components install beta pubsub-emulator
 
 EXPOSE 8681
 
